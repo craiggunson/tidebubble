@@ -1,0 +1,1 @@
+aws s3 sync . s3://tidebubble.craiggunson.com --acl public-read --cache-control "max-age=60" --profile home --delete
