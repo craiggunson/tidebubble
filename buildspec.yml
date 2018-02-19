@@ -7,11 +7,11 @@ phases:
   build:
     commands:
       - echo deploying static content to s3
-      - aws s3 sync . s3://tidebubble.craiggunson.com --acl public-read --cache-control "max-age=60" --profile home --delete
+      - aws s3 sync . s3://tidebubble.craiggunson.com --acl public-read --cache-control "max-age=60"  --delete
       - echo package cloudformation
-      - aws cloudformation package --template-file ./api/sam.yaml --s3-bucket tidebubble.craiggunson.com --s3-prefix deploy --output-template-file ./api/deploy.yaml --profile home
+      - aws cloudformation package --template-file ./api/sam.yaml --s3-bucket tidebubble.craiggunson.com --s3-prefix deploy --output-template-file ./api/deploy.yaml
       - echo deploying api template
-      - aws cloudformation deploy --template-file ./api/deploy.yaml --stack-name hightide --profile home --capabilities CAPABILITY_NAMED_IAM
+      - aws cloudformation deploy --template-file ./api/deploy.yaml --stack-name hightide  --capabilities CAPABILITY_NAMED_IAM
 
   post_build:
     commands:
