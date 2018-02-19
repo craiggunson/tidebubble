@@ -1,3 +1,0 @@
-aws cloudformation package --template-file sam.yaml --s3-bucket tidebubble.craiggunson.com --s3-prefix deploy --output-template-file ./deploy.yaml --profile home
-
-aws cloudformation deploy --template-file deploy.yaml --stack-name hightide --profile home --capabilities CAPABILITY_NAMED_IAM
