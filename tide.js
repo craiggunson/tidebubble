@@ -127,7 +127,7 @@ function gettide() {
     async: false,
 		timeout: 7000,
 		error: function(){
-			      console.log "no tide data",
+			      console.log("no tide data");
             return true;
         },
 		success: function(responseData,status) {
