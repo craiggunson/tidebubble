@@ -122,8 +122,10 @@ function drawLabel(text,x,y)
 
 function gettide() {
 
-	$.get("https://nzjoxw0k08.execute-api.ap-southeast-2.amazonaws.com/prod/hightide", function(responseData,status) {
-		todaystide=responseData;
+	$.get({
+		url: "https://nzjoxw0k08.execute-api.ap-southeast-2.amazonaws.com/prod/hightide",
+		success: function(responseData,status) {
+	  todaystide=responseData;
 		console.log(todaystide);
 		var todaystide = todaystide.replace(':00+10:00\"\,\"high',' high');
 		var todaystide = todaystide.replace(':00+10:00\"\,\"high','high');
@@ -139,9 +141,11 @@ function gettide() {
 		items=JSON.parse(todaystide)
 		console.log("items:",items)
 		return todaystide;
+	},
+	timeout: 7000
 	});
 }
 
 var todaystide = gettide();
 console.log("todaystide:",todaystide);
-window.onload = setTimeout(initialize,7000);
+window.onload = setTimeout(initialize);
