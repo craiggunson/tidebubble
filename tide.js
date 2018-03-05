@@ -124,6 +124,12 @@ function gettide() {
 
 	$.get({
 		url: "https://nzjoxw0k08.execute-api.ap-southeast-2.amazonaws.com/prod/hightide",
+    async: false,
+		timeout: 7000,
+		error: function(){
+			      console.log "no tide data",
+            return true;
+        },
 		success: function(responseData,status) {
 	  todaystide=responseData;
 		console.log(todaystide);
@@ -141,8 +147,7 @@ function gettide() {
 		items=JSON.parse(todaystide)
 		console.log("items:",items)
 		return todaystide;
-	},
-	timeout: 7000
+	}
 	});
 }
 
