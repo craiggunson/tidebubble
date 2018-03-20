@@ -123,7 +123,7 @@ function drawLabel(text,x,y)
 function gettide() {
 
 	$.get({
-		url: "https://nzjoxw0k08.execute-api.ap-southeast-2.amazonaws.com/prod/hightide",
+		url: "https://8u1nwui24g.execute-api.ap-southeast-2.amazonaws.com/prod/hightide",
     async: false,
 		timeout: 7000,
 		error: function(){

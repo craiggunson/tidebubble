@@ -48,7 +48,7 @@ Resources:
                 responses:
                   default:
                     responseParameters:
-                      method.response.header.Access-Control-Allow-Origin: '''http://tidebubble.craiggunson.com'''
+                      method.response.header.Access-Control-Allow-Origin: '''https://tidebubble.craiggunson.com'''
                     statusCode: '200'
                 type: aws
                 uri:
@@ -87,7 +87,7 @@ Resources:
                     responseParameters:
                       method.response.header.Access-Control-Allow-Headers: '''Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'''
                       method.response.header.Access-Control-Allow-Methods: '''GET,OPTIONS'''
-                      method.response.header.Access-Control-Allow-Origin: '''http://tidebubble.com'''
+                      method.response.header.Access-Control-Allow-Origin: '''https://tidebubble.craiggunson.com'''
                     statusCode: '200'
                 type: mock
         schemes:
@@ -112,7 +112,7 @@ Resources:
     Type: AWS::IAM::Role
   hightide:
     Properties:
-      CodeUri: s3://tidebubble.craiggunson.com/deploy/c66f57d410e8220d40a3a883b0530726
+      CodeUri: s3://tidebubble.craiggunson.com/deploy/cd746ef0679d48e2bd8eaaade3e7f3cc
       Description: ''
       Handler: lambda-hightide.handler
       MemorySize: 128
