@@ -48,7 +48,7 @@ http.get('http://www.bom.gov.au/ntc/IDO59001/IDO59001_2018_VIC_TP009.xml', funct
           console.log('report:',report)
           //console.log(d,'FINISHED', err, tidedata);
           var myJsonString = JSON.stringify(report);
-         callback(null, myJsonString);
+         return(myJsonString);
         });
       });
     }
