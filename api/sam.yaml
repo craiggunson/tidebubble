@@ -51,7 +51,7 @@ Resources:
                   default:
                     statusCode: '200'
                     responseParameters:
-                      method.response.header.Access-Control-Allow-Origin: '''http://tidebubble.craiggunson.com'''
+                      method.response.header.Access-Control-Allow-Origin: '''https://tidebubble.craiggunson.com'''
                 uri:
                   'Fn::Join':
                   - ''
@@ -93,7 +93,7 @@ Resources:
                       method.response.header.Access-Control-Allow-Methods: '''GET,OPTIONS'''
                       method.response.header.Access-Control-Allow-Headers: >-
                         'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'
-                      method.response.header.Access-Control-Allow-Origin: '''http://tidebubble.craiggunson.com'''
+                      method.response.header.Access-Control-Allow-Origin: '''https://tidebubble.craiggunson.com'''
                 requestTemplates:
                   application/json: '{"statusCode": 200}'
                 passthroughBehavior: when_no_match
