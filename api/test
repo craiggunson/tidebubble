@@ -1,2 +1,1 @@
-node -e 'require("./lambda-hightide.js").handler()'
-
+lambda-local -l ./lambda-hightide.js -h handler -e ./event.json 

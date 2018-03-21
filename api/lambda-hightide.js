@@ -1,3 +1,4 @@
+event = {};
 exports.handler = (event, context, callback) => {
 
 process.env.TZ = 'Australia/Sydney'
