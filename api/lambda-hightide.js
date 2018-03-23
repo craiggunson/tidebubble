@@ -1,6 +1,4 @@
 event = {};
-exports.handler = (event, context, callback) => {
-
 process.env.TZ = 'Australia/Sydney'
 
 
@@ -12,8 +10,10 @@ var dateTime = require('node-datetime');
 var dt = dateTime.create();
 var d = dt.format('Y-m-d');
 var report = []
-
 parser.on('error', function(err) { console.log('Parser error', err); });
+
+exports.handler = (event, context, callback) => {
+
 
 var data = '';
 http.get('http://www.bom.gov.au/ntc/IDO59001/IDO59001_2018_VIC_TP009.xml', function(res) {
