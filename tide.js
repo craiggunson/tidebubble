@@ -20,6 +20,8 @@ function initialize() {
 	canvasElement.height = window.innerHeight;
 	nWidth = canvasElement.width;
 	nHeight = canvasElement.height;
+	context2D.clearRect(0, 0, nWidth, nHeight);
+
 	bubblesize = (nHeight)/8;
 	startY = nHeight / 2;
 
@@ -152,8 +154,16 @@ function gettide() {
 }
 
 var todaystide = gettide();
-if (todaystide != null ) {
-document.getElementById("loader").classList.remove('drip'); 
-console.log("todaystide:",todaystide);
-window.onload = setTimeout(initialize);
-}
+
+function check() {
+console.log ('checking...');
+   if (todaystide == true) {
+		 document.getElementById("loader").classList.remove('drip');
+		 console.log("todaystide:",todaystide);
+		 window.onload = setTimeout(initialize);
+		 clearInterval(myintervalid);
+
+   }
+ }
+
+myintervalid = setInterval(check, 1000);
