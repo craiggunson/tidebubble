@@ -157,7 +157,7 @@ var todaystide = gettide();
 
 function check() {
 console.log ('checking...');
-   if (todaystide != null) {
+   if (todaystide !== undefined) {
 		 document.getElementById("loader").classList.remove('drip');
 		 console.log("todaystide:",todaystide);
 		 initialize();
