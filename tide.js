@@ -157,10 +157,10 @@ var todaystide = gettide();
 
 function check() {
 console.log ('checking...');
-   if (todaystide == true) {
+   if (todaystide != null) {
 		 document.getElementById("loader").classList.remove('drip');
 		 console.log("todaystide:",todaystide);
-		 window.onload = setTimeout(initialize);
+		 initialize();
 		 clearInterval(myintervalid);
 
    }
