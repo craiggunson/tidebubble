@@ -8,6 +8,8 @@ var theta = 0;
 var hightide = "";
 var lowtide = "";
 var radius = 5;
+var items = 0;
+
 
 function initialize() {
 	window.addEventListener('resize', initialize, false);
@@ -156,7 +158,7 @@ var todaystide = gettide();
 
 function check() {
 console.log ('checking...');
-   if (todaystide !== undefined) {
+   if (items !== undefined) {
 		 document.getElementById("loader").classList.remove('drip');
 		 console.log("todaystide:",todaystide);
 		 window.onload = setTimeout(initialize);
