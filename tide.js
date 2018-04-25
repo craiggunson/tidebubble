@@ -9,7 +9,6 @@ var hightide = "";
 var lowtide = "";
 var radius = 5;
 
-
 function initialize() {
 	window.addEventListener('resize', initialize, false);
 
@@ -160,7 +159,7 @@ console.log ('checking...');
    if (todaystide !== undefined) {
 		 document.getElementById("loader").classList.remove('drip');
 		 console.log("todaystide:",todaystide);
-		 initialize();
+		 window.onload = setTimeout(initialize);
 		 clearInterval(myintervalid);
 
    }
