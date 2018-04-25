@@ -27,7 +27,6 @@ function initialize() {
 
 	requestAnimationFrame(moveWave);
 
-  document.getElementById("loader").classList.remove('loader');
 
 hightide = []
 lowtide = []
@@ -131,7 +130,8 @@ function gettide() {
             return true;
         },
 		success: function(responseData,status) {
-	  todaystide=responseData;
+
+		todaystide=responseData;
 		console.log(todaystide);
 		var todaystide = todaystide.replace(':00+10:00\"\,\"high',' high');
 		var todaystide = todaystide.replace(':00+10:00\"\,\"high','high');
@@ -152,5 +152,8 @@ function gettide() {
 }
 
 var todaystide = gettide();
+if (todaystide != null ) {
+document.getElementById("loader").classList.remove('drip'); 
 console.log("todaystide:",todaystide);
 window.onload = setTimeout(initialize);
+}
