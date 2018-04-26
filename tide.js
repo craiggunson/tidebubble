@@ -158,12 +158,14 @@ var todaystide = gettide();
 
 function check() {
 console.log ('checking...');
-   if(typeof todaystide !== "undefined") {
-		 document.getElementById("loader").classList.remove('drip');
+   if(typeof items !== "undefined") {
+		 if (items !== 0) {
+		 console.log('items:',items);
+		 document.getElementById("loader").remove();
 		 console.log("todaystide:",todaystide);
 		 window.onload = setTimeout(initialize);
 		 clearInterval(myintervalid);
-
+	 		}
    }
  }
 
