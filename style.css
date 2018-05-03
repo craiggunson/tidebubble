@@ -2,7 +2,10 @@ html, body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  display: flex;
+  overflow:hidden;
+  display: block;
+  padding: 20% 0;
+  zoom: 1;
   background-color: #392613;
 }
 @font-face {
@@ -19,23 +22,16 @@ html, body {
 
 .drip {
   font-family: "led";
-  display: flex;
   font-size: 10vw;
   color: #ccff33;
-
-  justify-content: center;
-  margin: auto;
-  position: relative;
+  text-align: center;
 }
 
 .stop {
   font-family: "led";
-  display: flex;
   font-size: 10vw;
   color: #ccff33;
 
-  justify-content: center;
-  margin: auto;
   position: relative;
 
   animation: blinker 1s linear infinite;
