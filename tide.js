@@ -9,6 +9,7 @@ var hightide = "";
 var lowtide = "";
 var radius = 5;
 var items = 0;
+var todaystide = "";
 
 
 function initialize() {
@@ -134,15 +135,15 @@ function reqListener() {
 
 
 
-		var todaystide = todaystide.replace(':00+10:00\"\,\"high',' high');
-		var todaystide = todaystide.replace(':00+10:00\"\,\"high','high');
-		var todaystide = todaystide.replace(':00+10:00\"\,\"low',' low');
-		var todaystide = todaystide.replace(':00+10:00\"\,\"low','low');
+		todaystide = todaystide.replace(':00+10:00\"\,\"high',' high');
+		todaystide = todaystide.replace(':00+10:00\"\,\"high','high');
+		todaystide = todaystide.replace(':00+10:00\"\,\"low',' low');
+		todaystide = todaystide.replace(':00+10:00\"\,\"low','low');
     // Make it work with day light savings time.
-		var todaystide = todaystide.replace(':00+11:00\"\,\"high',' high');
-		var todaystide = todaystide.replace(':00+11:00\"\,\"high','high');
-		var todaystide = todaystide.replace(':00+11:00\"\,\"low',' low');
-		var todaystide = todaystide.replace(':00+11:00\"\,\"low','low');
+		todaystide = todaystide.replace(':00+11:00\"\,\"high',' high');
+		todaystide = todaystide.replace(':00+11:00\"\,\"high','high');
+		todaystide = todaystide.replace(':00+11:00\"\,\"low',' low');
+		todaystide = todaystide.replace(':00+11:00\"\,\"low','low');
 
 
 		items=JSON.parse(todaystide)
@@ -156,12 +157,10 @@ function reqListener() {
 
 var oReq = new XMLHttpRequest();
 oReq.addEventListener("load", reqListener);
-oReq.open("GET", "https://8u1nwui24g.execute-api.ap-southeast-2.amazonaws.com/prod/hightide", false);
+oReq.open("GET", "https://8u1nwui24g.execute-api.ap-southeast-2.amazonaws.com/prod/hightide", true);
 oReq.send();
 
 
-
-var todaystide = reqListener();
 
 function check() {
 console.log ('checking...');
