@@ -7,7 +7,7 @@ html, body {
   display: block;
   zoom: 1;
   position: absolute;
-  background-color: rgba(0,150,255,1);
+  background-color: rgba(0,200,255,1);
 }
 @font-face {
   font-family: "led";
