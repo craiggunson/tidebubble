@@ -7,7 +7,7 @@ html, body {
   display: block;
   zoom: 1;
   position: absolute;
-  background-color: #392613;
+  background-color: rgba(0,150,255,1);
 }
 @font-face {
   font-family: "led";
@@ -26,14 +26,14 @@ html, body {
 
   font-family: "led";
   font-size: 10vw;
-  color: #ccff33;
+  color: rgba(255,255,255,.7);
   text-align: center;
 }
 
 .stop {
   font-family: "led";
   font-size: 10vw;
-  color: #ccff33;
+  color: rgba(255,255,255,.7);
 
   position: relative;
 
