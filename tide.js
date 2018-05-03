@@ -122,20 +122,18 @@ function drawLabel(text,x,y)
   }
 
 
-function gettide() {
+function reqListener() {
+ console.log('raw',this.responseText);
 
-	$.get({
-		url: "https://8u1nwui24g.execute-api.ap-southeast-2.amazonaws.com/prod/hightide",
-    async: false,
-		timeout: 7000,
-		error: function(){
-			      console.log("no tide data");
-            return true;
-        },
-		success: function(responseData,status) {
 
-		todaystide=responseData;
-		console.log(todaystide);
+		todaystide=JSON.parse(this.responseText);
+		todaystide = todaystide.toString();
+		todaystidewind=JSON.parse(todaystide);
+
+		console.log('todaystide',todaystide);
+
+
+
 		var todaystide = todaystide.replace(':00+10:00\"\,\"high',' high');
 		var todaystide = todaystide.replace(':00+10:00\"\,\"high','high');
 		var todaystide = todaystide.replace(':00+10:00\"\,\"low',' low');
@@ -150,11 +148,20 @@ function gettide() {
 		items=JSON.parse(todaystide)
 		console.log("items:",items)
 		return todaystide;
-	}
-	});
+
+
 }
 
-var todaystide = gettide();
+
+
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", reqListener);
+oReq.open("GET", "https://8u1nwui24g.execute-api.ap-southeast-2.amazonaws.com/prod/hightide", false);
+oReq.send();
+
+
+
+var todaystide = reqListener();
 
 function check() {
 console.log ('checking...');
