@@ -1,7 +1,6 @@
 event = {};
 process.env.TZ = 'Australia/Sydney'
 
-
 var http = require('http');
 var fs = require('fs');
 var xml2js = require('xml2js');
@@ -12,11 +11,18 @@ var d = dt.format('Y-m-d');
 var report = []
 parser.on('error', function(err) { console.log('Parser error', err); });
 
+const options = {
+  hostname: 'www.bom.gov.au',
+  path: '/ntc/IDO59001/IDO59001_2018_VIC_TP009.xml',
+  headers: { 'User-Agent': 'Mozilla/5.0' }
+};
+
+
 exports.handler = (event, context, callback) => {
 
 
 var data = '';
-http.get('http://www.bom.gov.au/ntc/IDO59001/IDO59001_2018_VIC_TP009.xml', function(res) {
+http.get(options, function(res) {
     if (res.statusCode >= 200 && res.statusCode < 400) {
       res.on('data', function(data_) { data += data_.toString(); });
       res.on('end', function() {
