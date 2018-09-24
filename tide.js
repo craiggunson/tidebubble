@@ -11,9 +11,13 @@ var radius = 5;
 var items = 0;
 var todaystide = "";
 
+function rel() {
+  location.reload();
 
+}
+window.addEventListener('resize', rel, false);
 function initialize() {
-	window.addEventListener('resize', initialize, false);
+  
 
 	var canvasElement = document.getElementById("world");
 
