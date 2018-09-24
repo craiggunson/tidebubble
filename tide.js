@@ -15,9 +15,9 @@ function rel() {
   location.reload();
 
 }
-window.addEventListener('resize', rel, false);
 function initialize() {
-  
+  window.addEventListener('resize', rel, false);
+
 
 	var canvasElement = document.getElementById("world");
 
