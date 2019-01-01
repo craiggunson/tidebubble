@@ -13,7 +13,7 @@ parser.on('error', function(err) { console.log('Parser error', err); });
 
 const options = {
   hostname: 'www.bom.gov.au',
-  path: '/ntc/IDO59001/IDO59001_2018_VIC_TP009.xml',
+  path: '/ntc/IDO59001/IDO59001_2019_VIC_TP009.xml',
   headers: { 'User-Agent': 'Mozilla/5.0' }
 };
 
