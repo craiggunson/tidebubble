@@ -108,6 +108,8 @@ function drawWave() {
 		context2D.lineTo(nX, nY);
 
 	}
+  context2D.lineWidth = nHeight/20;
+
 	context2D.stroke();
 
 }

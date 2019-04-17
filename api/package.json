@@ -2,13 +2,12 @@
 
 {
   "name": "hightide",
-  "version": "0.4.3",
+  "version": "8.10.0",
   "private": true,
   "dependencies": {
-    "fs": "0.0.2",
-    "http": "0.0.0",
-    "node-datetime": "^1.0.0",
-    "xml2js": "0.4.17"
+    "http": "latest",
+    "node-datetime": "latest",
+    "xml2js": "latest"
   },
   "scripts": {
     "start": "lambda-hightide.js"

@@ -2,7 +2,6 @@ event = {};
 process.env.TZ = 'Australia/Sydney'
 
 var http = require('http');
-var fs = require('fs');
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 var dateTime = require('node-datetime');
@@ -60,11 +59,6 @@ http.get(options, function(res) {
       });
     }
   });
-
-
-
-
-
 
 
 
