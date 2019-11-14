@@ -108,7 +108,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda-hightide.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs10.x
       CodeUri: .
       Description: ''
       Policies: AmazonDynamoDBFullAccess
