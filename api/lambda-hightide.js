@@ -3,7 +3,6 @@ process.env.TZ = 'Australia/Sydney'
 const http = require('http');
 const zlib = require("zlib");
 
-var http = require('http');
 var xml2js = require('xml2js');
 var parser = new xml2js.Parser();
 var dateTime = require('node-datetime');
