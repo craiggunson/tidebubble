@@ -16,7 +16,7 @@ parser.on('error', function(err) { console.log('Parser error', err); });
 
 const options = {
   hostname: 'www.bom.gov.au',
-  path: '/ntc/IDO59001/IDO59001_2021_VIC_TP009.xml',
+  path: '/ntc/IDO59001/IDO59001_2022_VIC_TP009.xml',
   headers: { 'User-Agent': 'Mozilla/5.0 (X11; CrOS x86_64 13816.82.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.218 Safari/537.36',
   'Host': 'www.bom.gov.au',
   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
