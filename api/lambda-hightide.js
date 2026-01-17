@@ -1,6 +1,6 @@
 event = {};
 process.env.TZ = 'Australia/Sydney'
-const http = require('http');
+const https = require('https');
 const zlib = require("zlib");
 
 var xml2js = require('xml2js');
@@ -32,7 +32,7 @@ exports.handler = (event, context, callback) => {
 
 var data = '';
 
-http.get(options, function(res) {
+https.get(options, function(res) {
     if (res.statusCode >= 200 && res.statusCode < 400) {
       var gunzip = zlib.createGunzip();            
       res.pipe(gunzip);
